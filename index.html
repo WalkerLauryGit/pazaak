@@ -10,6 +10,11 @@
   
 <style>
 
+  .board{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
   .hand{
     display: flex;
   }
@@ -34,10 +39,6 @@
     width: 100px;
   }
 
-  .black-background{
-
-  }
-
   .zoom:hover{
     transform: scale(1.5);
   }
@@ -55,21 +56,21 @@
 
   <div id="" class="hand">
     <div id="slot1" class="shadow zoom">
-
+      4
     </div>
     <div id="slot2" class="shadow zoom">
-
+      1
     </div>
     <div id="slot3" class="shadow zoom">
-
+      -5
     </div>
     <div id="slot4" class="shadow zoom">
-
+      4
     </div>
   </div>
   
-  <div id="board">
-    <div id="player-one" class="black-background">
+  <div class="board">
+    <div id="player-one" class="black-background board">
       <div id="slot1" class="board-slot">
 
       </div>
