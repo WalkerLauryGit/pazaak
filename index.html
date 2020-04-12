@@ -4,8 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pazaak</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  
+  
+<style>
+
+  .hand{
+    display: flex;
+  }
+
+  .shadow{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    
+    height: 150px;
+    width: 100px;
+    margin: 2em;
+
+  }
+
+  .board-slot{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 1em;
+    float:left;
+    height: 150px;
+    width: 100px;
+  }
+
+  .black-background{
+
+  }
+
+  .zoom:hover{
+    transform: scale(1.5);
+  }
+
+  .button-margin{
+    margin: 20px;
+  }
+</style>
 </head>
+
+
 <body>
-  <h1>Test your luck</h1>
+  <button class="waves-effect waves-light btn-large button-margin">End Turn</button>
+  <button  class="waves-effect waves-light btn-large">Stand</button>
+
+  <div id="" class="hand">
+    <div id="slot1" class="shadow zoom">
+
+    </div>
+    <div id="slot2" class="shadow zoom">
+
+    </div>
+    <div id="slot3" class="shadow zoom">
+
+    </div>
+    <div id="slot4" class="shadow zoom">
+
+    </div>
+  </div>
+  
+  <div id="board">
+    <div id="player-one" class="black-background">
+      <div id="slot1" class="board-slot">
+
+      </div>
+      <div id="slot2" class="board-slot">
+  
+      </div>
+      <div id="slot3" class="board-slot">
+  
+      </div>
+      <div id="slot4" class="board-slot">
+  
+      </div>
+      <div id="slot5" class="board-slot">
+
+      </div>
+      <div id="slot6" class="board-slot">
+  
+      </div>
+      <div id="slot7" class="board-slot">
+  
+      </div>
+      <div id="slot8" class="board-slot">
+  
+      </div>
+      <div id="slot9" class="board-slot">
+
+      </div>
+    </div>
+    <div id="player-two">
+
+    </div>
+  </div>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
