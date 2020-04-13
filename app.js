@@ -46,6 +46,7 @@ function playCard(cardId){
 
   //add score to total
   total = updateScore(total, Number(value));
+
   console.log(total);
 
 }
@@ -53,6 +54,9 @@ function playCard(cardId){
 function updateScore(current, value){
   
   let total = current + value;
+  console.log(typeof total)
   //Something is making it not a numberS
-  document.getElementById('score').innerText = Number(total); 
+  document.getElementById('score').innerText = total; 
+  console.log(typeof total);
+  return total;
 }
