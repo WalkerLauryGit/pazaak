@@ -1,4 +1,6 @@
 
+
+let total = 0;
 function loadHand(){
 
   document.getElementById('start').remove();
@@ -7,16 +9,7 @@ function loadHand(){
 
   let handOfCards = document.getElementById('hand');
   console.log(handOfCards);
-  // hand.forEach(element => {
-  //  let div = document.createElement("div");
-  // //  div.classList.add('shadow');
-  //  let content = document.createTextNode(element);
-  //  div.appendChild(content); 
-   
-  //  handOfCards.appendChild(div);
-  //  console.log(handOfCards);
-  // });
-
+ 
   for(let i = 0; i<hand.length; i++){
     let div = document.createElement('div');
     div.classList.add('shadow');
@@ -50,14 +43,9 @@ function playCard(cardId){
   document.getElementById(cardId).remove();
 
   board.appendChild(div);
-  
-  
 
-  //1. get the id in card.id -X-
-  //2. grab the inner text of card with the id -X-
-  //3. delete the original card from the hand
-  //4. create a new card
-  //5. add new card to the board
-  //6. update the total points
+  //add score to total
+  total = total + Number(value)
+  console.log(total);
 
 }
