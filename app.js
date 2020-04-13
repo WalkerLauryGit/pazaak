@@ -45,7 +45,14 @@ function playCard(cardId){
   board.appendChild(div);
 
   //add score to total
-  total = total + Number(value)
+  total = updateScore(total, Number(value));
   console.log(total);
 
+}
+
+function updateScore(current, value){
+  
+  let total = current + value;
+  //Something is making it not a numberS
+  document.getElementById('score').innerText = Number(total); 
 }
