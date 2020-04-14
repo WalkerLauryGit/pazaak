@@ -56,7 +56,7 @@ const player2 = {
 */
 
 function computerTurn(){
-
+  
 }
 
 
@@ -106,12 +106,12 @@ function loadHand(){
   shuffle(sharedDeck);
   
   const hand = [-1, 3, 4, 2];
-
+  const computerHand = [2, 3, 1, 5];
   let handOfCards = document.getElementById('hand');
-  
+  let handOfCards2 = document.getElementById('hand2');
  
+  //TODO: TURN INTO A FUNCTION
   for(let i = 0; i<hand.length; i++){
-    
     let div = document.createElement('div');
     div.classList.add('shadow');
     div.classList.add('zoom');
@@ -121,10 +121,18 @@ function loadHand(){
     div.setAttribute('onclick', 'playCard(this.id)')
     let content = document.createTextNode(hand[i]);
     div.appendChild(content);
-
     handOfCards.appendChild(div);
+  }
 
-    
+  for(let i = 0; i<computerHand.length; i++){
+    let div = document.createElement('div');
+    div.classList.add('shadow');
+    div.classList.add('zoom');
+    div.setAttribute('id', i+5);
+    div.setAttribute('value', computerHand[i]);
+    handOfCards2.appendChild(div);
+// THIS IS WHERE I LEFT OFF
+
   }
 
   dealSharedcard('player-one');
