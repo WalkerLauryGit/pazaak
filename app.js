@@ -1,9 +1,18 @@
 
+let playerOneTotal = 0;
+// let playerTwoTotal = 0;
 
-let total = 0;
 
 
-const isStanding = false;
+const player1 = {
+  isStanding: false,
+  score: 0
+}
+
+const player2 = {
+  isStanding: false,
+  score: 0
+}
 
 /* Things to work on
 1. Deal a card at the beginning of the game
@@ -21,23 +30,50 @@ const isStanding = false;
 
 // DOING OPPONENTS TURN
 /*
+  Have the player go first
 
 */
 
+
+/** 
+ * FULL TURN CYCLE
+ * User Turn ------
+ * card from shared deck is dealt
+ * you can play a card from hand
+ * -\-\-\ Need to allow multiple cards to be played
+ * click end turn
+ * END USER TURN -------
+ * 
+ * COMPUTER TURN --------
+ * card from shared deck is dealt
+ * Computer decides if it needs to play a card from hand
+ * end turn ending the loop
+ * END COMPUTER TURN -------
+ * 
+ * wait for user input again
+ * 
+ * 
+*/
+
+function computerTurn(){
+
+}
 
 
 const sharedDeck = [];
 
 //Create init method
+for(let j = 0; j < 3; j++){
 for(let i = 1; i<11; i++){
   sharedDeck.push(i);
+  }
 }
 
 function checkWinner(){
-  if(total > 20){
+  if(playerOneTotal > 20){
     console.log('YOU LOSE BOOMER!');
   }
-  if(total <= 20){
+  if(playerOneTotal <= 20){
     console.log('YOU WIN!')
   }
 }
@@ -48,6 +84,7 @@ function shuffle(a) {
       const j = Math.floor(Math.random() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
   }
+  console.log(a);
   return a;
 }
 
@@ -59,7 +96,7 @@ function dealSharedcard(player){
   card.classList.add('board-slot');
   card.append(document.createTextNode(value));
   board.appendChild(card);
-  total = updateScore(total, value);
+  playerOneTotal = updateScore(playerOneTotal, Number(value));
 }
 
 function loadHand(){
@@ -114,17 +151,13 @@ function playCard(cardId){
   board.appendChild(div);
 
   //add score to total
-  total = updateScore(total, Number(value));
+  playerOneTotal = updateScore(playerOneTotal, Number(value));
 
   // console.log(total);
 
-  if(!isStanding){
-    dealSharedcard('player-one');
-  }
-
-  if(isStanding){
-    /* CHECK IF PLAYER WON */
-  }
+  // if(isStanding){
+  //   /* CHECK IF PLAYER WON */
+  // }
 }
 
 function updateScore(current, value){
@@ -132,7 +165,10 @@ function updateScore(current, value){
   let total = current + value;
   console.log(typeof total)
   //Something is making it not a numberS
-  document.getElementById('score').innerText = total; 
-  // console.log(typeof total);
+  document.getElementById('score').innerHTML = `<span>${total}</span>`; 
   return total;
+}
+
+function endTurn(){
+  dealSharedcard('player-two');
 }
