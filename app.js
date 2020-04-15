@@ -84,7 +84,7 @@ function shuffle(a) {
       const j = Math.floor(Math.random() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
   }
-  console.log(a);
+  // console.log(a);
   return a;
 }
 
@@ -104,6 +104,7 @@ function loadHand(){
   document.getElementById('start').remove();
 
   shuffle(sharedDeck);
+  
   
   const hand = [-1, 3, 4, 2];
   const computerHand = [2, 3, 1, 5];
