@@ -13,10 +13,12 @@
   .board{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
   }
 
   .hand{
     display: flex;
+    width: 100%;
   }
 
   .shadow{
@@ -63,19 +65,20 @@
     <div id="player-one" class="black-background board">
       
     </div>
-  </div>
-  <div id="hand2">
-    <!-- Auto Generated -->
-  </div>
-  <div class="board">
   
-  <div id="player-two" class="board">
-
   </div>
-</div>
-  <div>
-    <h2>Score: <span id="score">0</span></h2>
+  <h2>Player Score: <span id="userScore">0</span></h2>
+  <h2>Computer Score: <span id="computerScore">0</span></h2>
 
+  <div>
+    <div id="hand2" class="hand">
+    
+    </div>
+    <div class="board">
+      <div id="player-two" class="board">
+      
+      </div>
+    </div>
   </div>
 
   <!-- Compiled and minified JavaScript -->
