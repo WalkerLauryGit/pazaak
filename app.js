@@ -104,9 +104,9 @@ function dealSharedcard(player){
   board.appendChild(card);
   //END TURN THIS INTO A FUNCTION ---------
   if(isUserTurn){
-    player1.score += updateScore(Number(value));
+  updateScore(Number(value));
   }else{
-    player2.score += updateScore(Number(value));
+  updateScore(Number(value));
   }
 }
 
