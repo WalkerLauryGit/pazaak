@@ -84,7 +84,7 @@ function shuffle(a) {
       const j = Math.floor(Math.random() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
   }
-  console.log(a);
+  // console.log(a);
   return a;
 }
 
@@ -107,7 +107,7 @@ function loadHand(){
   
   const hand = [-1, 3, 4, 2];
   const computerHand = [2, 3, 1, 5];
-  let handOfCards = document.getElementById('hand');
+  let handOfCards = document.getElementById('hand1');
   let handOfCards2 = document.getElementById('hand2');
  
   //TODO: TURN INTO A FUNCTION
