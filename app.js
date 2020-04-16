@@ -196,11 +196,15 @@ function updateScore(value){
 
 function endTurn(){
   if(isUserTurn){
+    setTimeout(()=>{
     isUserTurn = false;
     dealSharedcard('player-two');
+    }, 2000);
   }else{
+    setTimeout(()=>{
     isUserTurn = true;
     dealSharedcard('player-one');
+    }, 2000);
   }
 
 }
