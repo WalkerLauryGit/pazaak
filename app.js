@@ -172,9 +172,9 @@ function playCard(cardId){
 
   //add score to total
   if(isUserTurn){
-    player1.score += updateScore(Number(value));
+    updateScore(Number(value));
   }else{
-    player2.score += updateScore(Number(value));
+    updateScore(Number(value));
   }
 }
 
@@ -196,15 +196,19 @@ function updateScore(value){
 
 function endTurn(){
   if(isUserTurn){
-    setTimeout(()=>{
     isUserTurn = false;
-    dealSharedcard('player-two');
-    }, 2000);
-  }else{
+    document.getElementsByName('button').disabled = true;
     setTimeout(()=>{
+    
+    dealSharedcard('player-two');
+    }, 1000);
+  }else{
     isUserTurn = true;
+    document.getElementsByName('button').disabled = false;
+    setTimeout(()=>{
+    
     dealSharedcard('player-one');
-    }, 2000);
+    }, 1000);
   }
 
 }
