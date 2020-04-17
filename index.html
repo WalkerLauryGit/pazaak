@@ -10,6 +10,11 @@
   
 <style>
 
+  .instruction{
+   
+     
+  }
+
   .board{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -48,15 +53,36 @@
   .button-margin{
     margin: 20px;
   }
+  
+  .hidden{
+    display: none;
+  }
 </style>
 </head>
 
 
 <body>
+
+  <div class="instruction">
+    <h2>Press start to begin the game</h2>
+    <h2>How To Play</h2>
+  
+    <ol>
+      <li>Each player is given 4 cards</li>
+      <li>At the start of each turn you are dealt a card with a value of 1-10</li>
+      <li>The person to reach 20 or as close to 20 wins the set</li>
+      <li>You can choose to play a card from your hand</li>
+      <li>When you are done with your turn, press end turn</li>
+      <li>If you are happy with your score, you can stand. Standing will pause all cards being dealt to your board</li>
+      <li>When both players are standing, the scores are evaluated and the winner is the closes to 20 without going over
+        20</li>
+    </ol>
+  </div>
+
   <button class="waves-effect waves-light btn-large" onclick="loadHand()" id="start">Start</button>
   <button class="waves-effect waves-light btn-large button-margin" onclick="endTurn()" id="endTurn">End Turn</button>
   <button  class="waves-effect waves-light btn-large" onclick="checkWinner()">Stand</button>
-  <div>
+  <div class="play-area hidden">
   <div id="hand1" class="hand">
    <!-- The hand is automatically generated -->
   </div>
@@ -81,20 +107,7 @@
     </div>
   </div>
 </div>
-<div class="instruction">
-  <h2>Press start to begin the game</h2>
-  <h2>How To Play</h2>
 
-  <ol>
-    <li>Each player is given 4 cards</li>
-    <li>At the start of each turn you are dealt a card with a value of 1-10</li>
-    <li>The person to reach 20 or as close to 20 wins the set</li>
-    <li>You can choose to play a card from your hand</li>
-    <li>When you are done with your turn, press end turn</li>
-    <li>If you are happy with your score, you can stand. Standing will pause all cards being dealt to your board</li>
-    <li>When both players are standing, the scores are evaluated and the winner is the closes to 20 without going over 20</li>
-  </ol>
-</div>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="app.js"></script>

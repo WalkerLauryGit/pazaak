@@ -30,8 +30,24 @@ const player2 = {
 const sharedDeck = [];
 
 
+/**
+ * Determine if a card should be played
+ * 
+ * if player1.score > player2.score and player2.score > 15
+ *    check the cards in hand to see if a value would be greater than player1.score
+ *    check the cards in hand to see if a value would put you at 20
+ *    check if sum of cards would make it 
+ * if player1.isStanding and player2.score < player1.score
+ *  check if the cards in hand to see if a value would be greater than player1.score
+ *  check if any sum of cards would be greater than player1.score  
+ * 
+ * 
+ */
+
 function computerTurn(){
   dealSharedcard('player-two')
+
+  // if(player2.score >)
 
   endTurn();
 }
