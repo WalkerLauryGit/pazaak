@@ -1,44 +1,18 @@
-
-/* Things to work on
-1. Deal a card at the beginning of the game
-2. Deal a card at the beginning of every turn while you are not in stand mode
-3. Win the game if you hit 20
-4. Lose the game if you go over 20
-5. HOW DO I DO TURNS?????  
-
-
-
-
-
-
-*/
-
-// DOING OPPONENTS TURN
-/*
-  Have the player go first
-
-*/
-
-
-/** 
- * FULL TURN CYCLE
- * User Turn ------
- * card from shared deck is dealt
- * you can play a card from hand
- * -\-\-\ Need to allow multiple cards to be played
- * click end turn
- * END USER TURN -------
+/** THINGS TO WORK ON 
  * 
- * COMPUTER TURN --------
- * card from shared deck is dealt
- * Computer decides if it needs to play a card from hand
- * end turn ending the loop
- * END COMPUTER TURN -------
+ *  1. If the computer is standing or the user is standing, 
+ *     continue the other persons turn until it decides to stop 
+ *     or busts over 20
  * 
- * wait for user input again
+ *  2. Turn some of this code into functions like the creating of the div card
+ * 
+ *  3. 
+ * 
  * 
  * 
 */
+
+
 
 
 let isUserTurn = true;
@@ -66,7 +40,7 @@ function computerTurn(){
 //Create init method
 function init(){
 for(let j = 0; j < 4; j++){
-for(let i = 1; i<11; i++){
+  for(let i = 1; i<11; i++){
   sharedDeck.push(i);
     }
   }
@@ -94,6 +68,7 @@ function shuffle(a) {
 }
 
 function dealSharedcard(player){
+  setTimeout(()=>{
   let board = document.getElementById(player);
   let value = sharedDeck.shift();
   //TURN THIS INTO A FUNCTION -------------
@@ -108,6 +83,7 @@ function dealSharedcard(player){
   }else{
   updateScore(Number(value));
   }
+  }, 500);
 }
 
 function loadHand(){
@@ -124,6 +100,7 @@ function loadHand(){
  
   //TODO: TURN INTO A FUNCTION
   for(let i = 0; i<hand.length; i++){
+    
     let div = document.createElement('div');
     div.classList.add('shadow');
     div.classList.add('zoom');
@@ -134,9 +111,11 @@ function loadHand(){
     let content = document.createTextNode(hand[i]);
     div.appendChild(content);
     handOfCards.appendChild(div);
+    
   }
-
+  
   for(let i = 0; i<computerHand.length; i++){
+    
     let div = document.createElement('div');
     div.classList.add('shadow');
     div.classList.add('zoom');
@@ -144,8 +123,9 @@ function loadHand(){
     div.setAttribute('value', computerHand[i]);
     handOfCards2.appendChild(div);
 // THIS IS WHERE I LEFT OFF
-
-  }
+    
+    }
+  
 
   dealSharedcard('player-one');
 
