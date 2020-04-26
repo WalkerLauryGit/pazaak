@@ -74,7 +74,7 @@ for(let j = 0; j < 4; j++){
   sharedDeck.push(i);
     }
   }
-  document.getElementById('boardPlay').removeAttribute('class', 'hidden')
+  document.getElementById('boardPlay').classList.remove('hidden')
   document.getElementById('turn').innerText = "User";
 }
 

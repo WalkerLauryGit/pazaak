@@ -13,7 +13,7 @@
  
 
   .container{
-    max-width: 70em;
+    max-width: 90em;
     margin: auto;
   }
 
@@ -52,8 +52,13 @@
     transform: scale(1.25);
   }
 
+  .instruction ul{
+    margin-left: 25%;
+  }
+
   .button-max-width{
-    width: 100%;
+    width: 50%;
+    margin-left: 25%;
   }
   
   .hidden{
@@ -67,6 +72,28 @@
   .text-center{
     text-align: center;
   }
+
+  .boardPlay{
+   max-width: 100%;
+   display: flex;
+   
+  }
+
+  #player1{
+    display: inline-block;
+
+  }
+
+  #player2{
+    display: inline-block;
+  }
+
+  .column{
+    flex: 50%;
+    padding: 5px;
+  }
+
+
 </style>
 </head>
 
@@ -92,34 +119,44 @@
 
   <button class="waves-effect waves-light btn-large button-max-width" onclick="loadHand()" id="start">Start</button>
 
-  <div class="hidden" id="play-buttons">
+  <div class="hidden text-center" id="play-buttons">
   <button id="endTurn" class="waves-effect waves-light btn-large button-margin" onclick="endTurn()" id="endTurn">End Turn</button>
   <button  class="waves-effect waves-light btn-large" onclick="checkWinner()">Stand</button>
   <h2>Current Turn: <span id="turn"></span></h2>
-  <div class="play-area hidden" id="boardPlay">
-  <div id="hand1" class="hand">
+  <div class="hidden" id="boardPlay">
+    <!-- NEED THIS TO BE A COLUMN!!!!!! -->
+  <div id="player1" class="column">
+    <div id="hand1" class="hand">
    <!-- The hand is automatically generated -->
   </div>
 </div>
-  <div class="board">
+  <div class="board" class="column">
     <div id="player-one" class="black-background board">
       
     </div>
   
   </div>
   <h2>Player Score: <span id="userScore">0</span></h2>
+  </div>
+  <!-- NEED THIS TO BE A COLUMN!!!!!! -->
+  <div id="player2">
+
   <h2>Computer Score: <span id="computerScore">0</span></h2>
 
   <div>
     <div id="hand2" class="hand">
     
     </div>
+
     <div class="board">
       <div id="player-two" class="board">
       
       </div>
     </div>
   </div>
+</div>
+
+
 </div>
 </div>
 
