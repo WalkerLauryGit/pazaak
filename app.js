@@ -75,7 +75,7 @@ for(let j = 0; j < 4; j++){
     }
   }
   document.getElementById('boardPlay').removeAttribute('class', 'hidden')
-  
+  document.getElementById('turn').innerText = "User";
 }
 
 init();
@@ -207,8 +207,16 @@ function updateScore(value){
 }
 
 function endTurn(){
+  
+  
+  let turnIndicator = document.getElementById('turn');
+    
+
   if(isUserTurn){
     isUserTurn = false;
+    
+    //Change the indicator for the current turn label
+    turnIndicator.innerText = "Computer";
     
     document.getElementsByName('button').disabled = true;
     setTimeout(()=>{
@@ -217,6 +225,7 @@ function endTurn(){
     }, 1000);
   }else{
     isUserTurn = true;
+    turnIndicator.innerText = "User"
     document.getElementsByName('button').disabled = false;
     setTimeout(()=>{
     
