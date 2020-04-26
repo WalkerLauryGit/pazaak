@@ -122,6 +122,7 @@ function dealSharedcard(player){
 function loadHand(){
 
   document.getElementById('start').remove();
+  document.getElementById('play-buttons').classList.remove('hidden')
   document.getElementById('construction').classList.add('hidden');
   shuffle(sharedDeck);
   

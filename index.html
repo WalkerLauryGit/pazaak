@@ -10,10 +10,7 @@
   
 <style>
 
-  .instruction{
-   
-     
-  }
+  .start{}
 
   .board{
     display: grid;
@@ -79,7 +76,9 @@
     </ol>
   </div>
 
-  <button class="waves-effect waves-light btn-large" onclick="loadHand()" id="start">Start</button>
+  <button class="waves-effect waves-light btn-large button-margin" onclick="loadHand()" id="start">Start</button>
+
+  <div class="hidden" id="play-buttons">
   <button id="endTurn" class="waves-effect waves-light btn-large button-margin" onclick="endTurn()" id="endTurn">End Turn</button>
   <button  class="waves-effect waves-light btn-large" onclick="checkWinner()">Stand</button>
   <h2>Current Turn: <span id="turn"></span></h2>
@@ -87,7 +86,7 @@
   <div id="hand1" class="hand">
    <!-- The hand is automatically generated -->
   </div>
-  
+</div>
   <div class="board">
     <div id="player-one" class="black-background board">
       
