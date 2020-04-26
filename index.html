@@ -10,7 +10,12 @@
   
 <style>
 
-  .start{}
+ 
+
+  .container{
+    max-width: 70em;
+    margin: auto;
+  }
 
   .board{
     display: grid;
@@ -47,12 +52,20 @@
     transform: scale(1.25);
   }
 
-  .button-margin{
-    margin: 20px;
+  .button-max-width{
+    width: 100%;
   }
   
   .hidden{
     display: none;
+  }
+
+  .no-decor{
+    text-decoration: none;
+  }
+
+  .text-center{
+    text-align: center;
   }
 </style>
 </head>
@@ -60,11 +73,12 @@
 
 <body>
 
+  <div class="container">
   <div class="instruction" id="construction">
-    <h2>Press start to begin the game</h2>
-    <h2>How To Play</h2>
+    <h2 class="text-center">Press start to begin the game</h2>
+    <h2 class="text-center">How To Play</h2>
   
-    <ol>
+    <ul class="no-decor">
       <li>Each player is given 4 cards</li>
       <li>At the start of each turn you are dealt a card with a value of 1-10</li>
       <li>The person to reach 20 or as close to 20 wins the set</li>
@@ -73,10 +87,10 @@
       <li>If you are happy with your score, you can stand. Standing will pause all cards being dealt to your board</li>
       <li>When both players are standing, the scores are evaluated and the winner is the closes to 20 without going over
         20</li>
-    </ol>
+    </ul>
   </div>
 
-  <button class="waves-effect waves-light btn-large button-margin" onclick="loadHand()" id="start">Start</button>
+  <button class="waves-effect waves-light btn-large button-max-width" onclick="loadHand()" id="start">Start</button>
 
   <div class="hidden" id="play-buttons">
   <button id="endTurn" class="waves-effect waves-light btn-large button-margin" onclick="endTurn()" id="endTurn">End Turn</button>
@@ -106,6 +120,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
   <!-- Compiled and minified JavaScript -->
