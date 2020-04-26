@@ -63,7 +63,7 @@
 
 <body>
 
-  <div class="instruction">
+  <div class="instruction" id="construction">
     <h2>Press start to begin the game</h2>
     <h2>How To Play</h2>
   
@@ -80,9 +80,9 @@
   </div>
 
   <button class="waves-effect waves-light btn-large" onclick="loadHand()" id="start">Start</button>
-  <button class="waves-effect waves-light btn-large button-margin" onclick="endTurn()" id="endTurn">End Turn</button>
+  <button id="endTurn" class="waves-effect waves-light btn-large button-margin" onclick="endTurn()" id="endTurn">End Turn</button>
   <button  class="waves-effect waves-light btn-large" onclick="checkWinner()">Stand</button>
-  <div class="play-area hidden">
+  <div class="play-area hidden" id="boardPlay">
   <div id="hand1" class="hand">
    <!-- The hand is automatically generated -->
   </div>

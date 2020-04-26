@@ -24,7 +24,8 @@ const player1 = {
 
 const player2 = {
   isStanding: false,
-  score: 0
+  score: 0,
+  hand: [,,,,]
 }
 
 const sharedDeck = [];
@@ -44,10 +45,23 @@ const sharedDeck = [];
  * 
  */
 
+ /**
+  * Things to do:
+  * populate player 2 hand
+  * 
+  * 
+  */
+
 function computerTurn(){
+  
   dealSharedcard('player-two')
 
-  // if(player2.score >)
+  if(player2.score < player1.score && player1.isStanding){
+    //loop through the cards in hand to see what gets closer
+    for(let i = 0; i < player2.hand.length; i++){
+
+    }
+  }
 
   endTurn();
 }
@@ -60,6 +74,8 @@ for(let j = 0; j < 4; j++){
   sharedDeck.push(i);
     }
   }
+  document.getElementById('boardPlay').removeAttribute('class', 'hidden')
+  
 }
 
 init();
@@ -105,7 +121,7 @@ function dealSharedcard(player){
 function loadHand(){
 
   document.getElementById('start').remove();
-
+  document.getElementById('construction').classList.add('hidden');
   shuffle(sharedDeck);
   
   
@@ -193,6 +209,7 @@ function updateScore(value){
 function endTurn(){
   if(isUserTurn){
     isUserTurn = false;
+    
     document.getElementsByName('button').disabled = true;
     setTimeout(()=>{
     
