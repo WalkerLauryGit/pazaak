@@ -95,11 +95,11 @@ function shuffle(a) {
       const j = Math.floor(Math.random() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
   }
-  // console.log(a);
   return a;
 }
 
 function dealSharedcard(player){
+  if(sharedDeck.length > 1){
   setTimeout(()=>{
   let board = document.getElementById(player);
   let value = sharedDeck.shift();
@@ -116,6 +116,7 @@ function dealSharedcard(player){
   updateScore(Number(value));
   }
   }, 250);
+  }
 }
 
 function loadHand(){
