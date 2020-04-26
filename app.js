@@ -115,7 +115,7 @@ function dealSharedcard(player){
   }else{
   updateScore(Number(value));
   }
-  }, 500);
+  }, 250);
 }
 
 function loadHand(){
@@ -222,7 +222,7 @@ function endTurn(){
     setTimeout(()=>{
     
     dealSharedcard('player-two');
-    }, 1000);
+    }, 250);
   }else{
     isUserTurn = true;
     turnIndicator.innerText = "User"
@@ -230,7 +230,7 @@ function endTurn(){
     setTimeout(()=>{
     
     dealSharedcard('player-one');
-    }, 1000);
+    }, 250);
   }
 
 }
